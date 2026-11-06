@@ -65,9 +65,9 @@
 
                 card.innerHTML = `
                <span>${userId++}</span>
-               <span>Name: ${name}</span>
-               <span>Profession: ${profession}</span>
-                <span>Age: ${age}</span>`;
+               <span title="${name}">Name: ${name}</span>
+               <span title="${profession}">Profession: ${profession}</span>
+               <span title="${age}">Age: ${age}</span>`;
 
 
                 const deleteButton = document.createElement("button");
