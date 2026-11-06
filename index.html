@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>New Employees</h3>
+    <form action="" id="userForm">
+        <div class="form-group">
+            <label for="name">Enter Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="profession">Enter Profession</label>
+            <input type="text" name="profession" id="profession">
+        </div>
+
+        <div class="form-group">
+            <label for="age">Enter Age</label>
+            <input type="number" name="age" id="age">
+        </div>
+
+        <button type="submit" id="addUser">Add User</button>
+
+    </form>
+    <span id="message"></span>
+
+    <div class="user-list">
+        <h3>Added Employees</h3>
+        <div class="employeeList">
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("userForm");
+        const employeeList = document.querySelector(".employeeList");
+        let userId = 1;
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const profession = document.getElementById("profession").value;
+            const age = document.getElementById("age").value;
+
+            if (name == '' || profession == '' || age == '') {
+                const message = document.getElementById("message");
+                message.innerHTML = "Error: Please make sure all the fields are filled before adding in an employee!";
+                message.style.color = "red";
+            }
+            else {
+                const message = document.getElementById("message");
+                message.innerHTML = "Success: Employee Added!";
+                message.style.color = "green";
+
+                const row = document.createElement("div");
+                row.className = "employee-row";
+
+                const card = document.createElement("div");
+                card.className = "employee-card";
+
+                card.innerHTML = `
+               <span>${userId++}</span>
+               <span>Name: ${name}</span>
+               <span>Profession: ${profession}</span>
+                <span>Age: ${age}</span>`;
+
+
+                const deleteButton = document.createElement("button");
+                deleteButton.type = "button";
+                deleteButton.innerHTML = "Delete User";
+                deleteButton.className = "delete-button";
+                deleteButton.addEventListener("click", function () {
+                    employeeList.removeChild(row);
+                });
+
+                row.appendChild(card);
+                row.appendChild(deleteButton);
+                employeeList.appendChild(row);
+
+                form.reset();
+
+            }
+        })
+    </script>
+</body>
+
+</html>

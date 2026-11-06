@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 25px 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+form {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    width: 131px;
+    height: 33px;
+    grid-column: 1;
+    justify-self: start;
+    margin: 0;
+}
+
+label {
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+input {
+    height: 33px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #888;
+    border-radius: 4px;
+    padding: 8 10px;
+    color: white;
+    outline: none;
+}
+
+input:focus {
+    border-color: #fff;
+}
+
+button {
+    width: fit-content;
+    height: 33px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 2px;
+
+}
+
+#message {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.employeeList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.employee-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.employee-card {
+    display: grid;
+    grid-template-columns: 35px 1fr 1.3fr 0.7fr;
+    column-gap: 20px;
+    align-items: center;
+    width: 480px;
+    height: 42px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.employee-row .delete-button {
+    height: 35px;
+    width: 130px;
+    padding: 0 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 400;
+}
