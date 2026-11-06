@@ -112,3 +112,9 @@ button {
     font-size: 13px;
     font-weight: 400;
 }
+
+.employee-card span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
